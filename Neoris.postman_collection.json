@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "db26bf4c-3e92-4f1c-b722-3ad6745a70c9",
+		"name": "Neoris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18407467"
+	},
+	"item": [
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "crearCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"persona\":{\r\n      \"nombre\":\"jose lema\",\r\n      \"genero\":\"masculino\",\r\n      \"edad\":30,\r\n      \"identificacion\":12344567,\r\n      \"direccion\":\"Otavalo sn y principal\",\r\n      \"telefono\":\"3047508201\"\r\n  },\r\n  \"contrasena\":\"1234\",\r\n  \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerCliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente?idCliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cliente?idCliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\":1,\r\n  \"persona\":{\r\n      \"id\":1,\r\n      \"nombre\":\"jose lema\",\r\n      \"genero\":\"masculino\",\r\n      \"edad\":30,\r\n      \"identificacion\":12344567,\r\n      \"direccion\":\"Otavalo sn\",\r\n      \"telefono\":\"3047508201\"\r\n  },\r\n  \"contrasena\":\"1234\",\r\n  \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarCliente",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"persona\":{\r\n      \"id\":1,\r\n      \"nombre\":\"jose lema\",\r\n      \"genero\":\"masculino\",\r\n      \"edad\":30,\r\n      \"identificacion\":12344567,\r\n      \"direccion\":\"Otavalo sn testing\",\r\n      \"telefono\":\"3047508201\"\r\n  },\r\n  \"contrasena\":\"1234\",\r\n  \"estado\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente?idCliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuenta",
+			"item": [
+				{
+					"name": "crearCuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cuenta\":{\"numeroCuenta\":\"860973\",\r\n    \"tipoCuenta\":\"Ahorro\",\r\n    \"saldoInicial\":700000,\r\n    \"estado\":true,\r\n    \"cliente\":{\r\n        \"id\":1\r\n    }\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cuenta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerCuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cuenta?idCuenta=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuenta"
+							],
+							"query": [
+								{
+									"key": "idCuenta",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cuenta?idCuenta=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuenta"
+							],
+							"query": [
+								{
+									"key": "idCuenta",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarCuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cuenta\":{\"id\":1,\r\n    \"numeroCuenta\":\"860977\",\r\n    \"tipoCuenta\":\"Ahorro\",\r\n    \"saldoInicial\":700000,\r\n    \"estado\":true,\r\n    \"cliente\":{\r\n        \"id\":1\r\n    }\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cuenta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuenta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarCuenta",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"cuenta\":{\r\n    \"numeroCuenta\":\"860977\",\r\n    \"tipoCuenta\":\"Ahorro\",\r\n    \"saldoInicial\":500000,\r\n    \"estado\":true,\r\n    \"cliente\":{\r\n        \"id\":1\r\n    }\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cuenta?idCuenta=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuenta"
+							],
+							"query": [
+								{
+									"key": "idCuenta",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movimientos",
+			"item": [
+				{
+					"name": "crearMovimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"movimiento\":{\r\n       \"fecha\": \"25-04-2023\",\r\n       \"tipoMovimiento\":\"credito\",\r\n       \"valor\":700000,\r\n       \"saldo\":200000,\r\n       \"cuenta\":{\r\n           \"id\":1\r\n       }\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movimiento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movimiento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerMovimiento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movimiento?idMovimiento=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movimiento"
+							],
+							"query": [
+								{
+									"key": "idMovimiento",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obtenerReporte",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movimiento/obtenerReporte?fechainicial=2023-04-25&fechafinal=2023-04-25&idcliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movimiento",
+								"obtenerReporte"
+							],
+							"query": [
+								{
+									"key": "fechainicial",
+									"value": "2023-04-25"
+								},
+								{
+									"key": "fechafinal",
+									"value": "2023-04-25"
+								},
+								{
+									"key": "idcliente",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarMovimiento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"movimiento\":{\r\n       \"id\":1,\r\n       \"fecha\": \"25-04-2023\",\r\n       \"tipoMovimiento\":\"credito\",\r\n       \"valor\":700000,\r\n       \"saldo\":200000,\r\n       \"cuenta\":{\r\n           \"id\":1\r\n       }\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movimiento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movimiento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarMovimiento",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"movimiento\":{\r\n       \"fecha\": \"25-04-2023\",\r\n       \"tipoMovimiento\":\"credito\",\r\n       \"valor\":900000,\r\n       \"saldo\":200000,\r\n       \"cuenta\":{\r\n           \"id\":5\r\n       }\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movimiento?idMovimiento=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movimiento"
+							],
+							"query": [
+								{
+									"key": "idMovimiento",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
